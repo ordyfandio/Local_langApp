@@ -1,0 +1,178 @@
+[
+    {
+        "eng":"Sky",
+        "lan":"yób",
+        "fr":"Ciel",
+        "audios":[
+            {
+                "name": "yób",
+                "file": "data/wav/mono_cm_ewo_001.wav"
+            }
+        ]
+    },
+    {
+        "eng":"Earth",
+        "lan":"sí",
+        "fr":"Terre",
+        "audios":[
+            {
+                "name": "sí",
+                "file": "data/wav/mono_cm_ewo_002.wav"
+            }
+        ]
+    },
+    {
+        "eng":"River",
+        "lan":"oswé",
+        "fr":"Riviere",
+        "audios":[
+            {
+                "name": "oswé",
+                "file": "data/wav/mono_cm_ewo_003.wav"
+            }
+        ]
+    },
+    {
+        "eng":"cloud",
+        "lan":"ǹkúd",
+        "fr":"Nuage",
+        "audios":[
+            {
+                "name": "ǹkúd",
+                "file": "data/wav/mono_cm_ewo_004.wav"
+            }
+        ]
+    },
+    {
+        "eng":"Sun",
+        "lan":"ǹló dzóbo",
+        "fr":"Soleil",
+        "audios":[
+            {
+                "name": "ǹló dzóbo",
+                "file": "data/wav/mono_cm_ewo_005.wav"
+            }
+        ]
+    },
+    {
+        "eng":"moon",
+        "lan":"ngɔn",
+        "fr":"Lune",
+        "audios":[
+            {
+                "name": "ngɔn",
+                "file": "data/wav/mono_cm_ewo_006.wav"
+            }
+        ]
+    },
+    {
+        "eng":"Star",
+        "lan":"otitie",
+        "fr":"Etoile",
+        "audios":[
+            {
+                "name": "otitie",
+                "file": "data/wav/mono_cm_ewo_006.wav"
+            }
+        ]
+    },
+    {
+        "eng":"Swamp",
+        "lan":"elɔbí",
+        "fr":"Marécage",
+        "audios":[
+            {
+                "name": "elɔbí",
+                "file": "data/wav/mono_cm_ewo_007.wav"
+            }
+        ]
+    },
+    {
+        "eng":"montagne",
+        "lan":"ǹkol",
+        "fr":"Montagne",
+        "audios":[
+            {
+                "name": "ǹkol",
+                "file": "data/wav/mono_cm_ewo_008.wav"
+            }
+        ]
+    },
+    {
+        "eng":"Herbes",
+        "lan":"elɔ́g",
+        "fr":"Herbe",
+        "audios":[
+            {
+                "name": "elɔ́g",
+                "file": "data/wav/mono_cm_ewo_009.wav"
+            }
+        ]
+    },
+    {
+        "eng":"Forest",
+        "lan":"afan",
+        "fr":"Foret",
+        "audios":[
+            {
+                "name": "afan",
+                "file": "data/wav/mono_cm_ewo_010.wav"
+            }
+        ]
+    },
+    {
+        "eng":"Tree",
+        "lan":"elé",
+        "fr":"Arbre",
+        "audios":[
+            {
+                "name": "elé",
+                "file": "data/wav/mono_cm_ewo_011.wav"
+            }
+        ]
+    },
+    {
+        "eng":"Stem",
+        "lan":"tín",
+        "fr":"Tige",
+        "audios":[
+            {
+                "name": "tín",
+                "file": "data/wav/mono_cm_ewo_012.wav"
+            }
+        ]
+    },
+    {
+        "eng":"Leaf",
+        "lan":"kyé",
+        "fr":"Feuille",
+        "audios":[
+            {
+                "name": "kyé",
+                "file": "data/wav/mono_cm_ewo_013.wav"
+            }
+        ]
+    },
+    {
+        "eng":"Root",
+        "lan":"ǹkaŋ",
+        "fr":"Racine",
+        "audios":[
+            {
+                "name": "ǹkaŋ",
+                "file": "data/wav/mono_cm_ewo_014.wav"
+            }
+        ]
+    },
+    {
+        "eng":"Bark",
+        "lan":"ebǎb",
+        "fr":"Ecorce",
+        "audios":[
+            {
+                "name": "ebǎb",
+                "file": "data/wav/mono_cm_ewo_015.wav"
+            }
+        ]
+    }
+]

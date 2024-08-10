@@ -1,0 +1,449 @@
+#: import t kivymd.toast.kivytoast
+
+
+ScreenManager:
+	HeroScreen:
+	FrontPageScreen:
+	LoginScreen:
+	SignUpScreen:
+	ProfileScreen:
+	DashboardScreen:
+	DataScreen:
+	DatasetScreen:
+	DetailScreen:
+
+
+<HeroScreen>:
+	name : 'hero'
+	FloatLayout:
+		Image:
+			source: 'img/lion.jpg'
+			pos_hint : {'center_x' : 0.5, 'center_y' : 0.75}
+		MDLabel:
+			text:"Speakeasy"
+			color : rgba('#FFA500')
+			pos_hint : {'center_x' : 0.8, 'center_y' : 0.5}
+			font_size:"30px"
+		MDFillRoundFlatButton:
+			text : "LET'S GO"
+			md_bg_color : rgba('#87CEEB')
+			text_color : 1, 1, 1, 1
+			size_hint: (0.6, None)
+			pos_hint : {'center_x' : 0.5, 'center_y' : 0.27}
+			on_press:
+				root.manager.current="FrontPage"
+		MDFillRoundFlatButton:
+			text : "I ALREADY HAVE AN ACCOUNT"
+			md_bg_color : rgba('#ffffff')
+			text_color : "#FFA500"
+			size_hint: (0.6, None)
+			pos_hint : {'center_x' : 0.5, 'center_y' : 0.17}
+			on_press:
+				root.manager.current="login"
+<FrontPageScreen>:
+	name : 'FrontPage'
+	FloatLayout:
+		MDIconButton:
+			icon : 'keyboard-backspace'
+			pos_hint: {'center_x': 0.1, 'center_y' : 0.94}
+			theme_text_color : 'Custom'
+			text_color : (1, 1, 1, 1)
+			on_press:
+				app.change_screen('back')
+		MDLabel:
+			text:"Hello ,my name is Speak. I will guide you throughout this wonderful journey"
+			color : rgba('#FFA500')
+			halign:"center"
+		Image:
+			source: 'img/lion3.jpg'
+			pos_hint : {'center_x' : 0.5, 'center_y' : 0.75}
+		MDFillRoundFlatButton:
+			text : "CONTINUE"
+			md_bg_color : rgba('#87CEEB')
+			text_color : rgba('#ffffff')
+			size_hint: (0.6, None)
+			pos_hint : {'center_x' : 0.5, 'center_y' : 0.17}
+			on_press:
+				root.manager.current="profile"
+<ProfileScreen>:
+	name : 'profile'
+	FloatLayout:
+		Image:
+			source: 'img/lion1.jpg'
+			pos_hint : {'center_x' : 0.5, 'center_y' : 0.75}
+		MDLabel:
+			text:"Create a profile to save your progress !"
+			color : rgba('#FFA500')
+			pos_hint : {'center_x' : 0.6, 'center_y' : 0.5}
+			font_size:"20px"
+		MDFillRoundFlatButton:
+			text : "CREATE YOUR PROFILE"
+			md_bg_color : rgba('#87CEEB')
+			text_color : 1, 1, 1, 1
+			size_hint: (0.6, None)
+			pos_hint : {'center_x' : 0.5, 'center_y' : 0.27}
+			on_press:
+				root.manager.current="login"
+		MDFillRoundFlatButton:
+			text : "LATER"
+			md_bg_color : rgba('#ffffff')
+			text_color : rgba('#FFA500')
+			size_hint: (0.6, None)
+			pos_hint : {'center_x' : 0.5, 'center_y' : 0.17}
+			on_press:
+				root.manager.current="hero"
+
+# login and registration page
+<LoginScreen>:
+	name : 'login'	
+	FloatLayout:
+		canvas:
+			Color:
+				rgba: rgba("#e5a222cc")
+			Triangle:
+				points: (0, self.size[1] - (0.4*self.size[1]), 0, self.size[1], self.size[0], self.size[1])
+			Color:
+				rgba: rgba("#d48d08cc")
+			Triangle:
+				points: (self.size[0], self.size[1] - (0.4*self.size[1]), self.size[0]//2, self.size[1] - (0.2*self.size[1]), self.size[0], self.size[1])
+		MDIcon:
+			pos_hint: {'center_x': 0.5, 'center_y' : 0.6}
+			size_hint: (None, None)
+			icon : 'AVATAR/icons8-user-100.png'
+		MDLabel:
+			text : 'SIGNIN'
+			pos_hint : {'x' : 0.415, 'center_y' : 0.85}
+			theme_text_color : 'Custom'
+			text_color : (1, 1, 1, 1)
+			text_size: (0.3, 0.2)
+		MDTextField:
+			id : email
+			hint_text : 'Email'
+			size_hint: (0.8, None)
+			pos_hint : {'center_x' : 0.5, 'center_y' : 0.45}
+		MDTextField:
+			id : password
+			hint_text : 'Password'
+			password : True
+			size_hint: (0.8, None)
+			pos_hint : {'center_x' : 0.5, 'center_y' : 0.34}
+		MDTextButton:
+			text : f"[u]Sign up![/u]"
+			markup: True
+			pos_hint: {'x': 0.1, 'y' : 0.26}
+			font_size: '13sp'
+			on_press:
+				root.manager.current="signup"
+		MDTextButton:
+			text : f'[u]forgot password?[/u]'
+			markup: True
+			pos_hint : {'x' : 0.6, 'y' : 0.26}
+			font_size: '13sp'
+			on_press:
+				t.toast('Sorry we can"t do anything, you are solely responsible for that !!')
+		MDFillRoundFlatButton:
+			text : 'Signin'
+			md_bg_color : rgba('#87CEEB')
+			text_color : 1, 1, 1, 1
+			size_hint: (0.4, None)
+			pos_hint : {'center_x' : 0.5, 'center_y' : 0.17}
+			on_press:
+				app.validate()
+<SignUpScreen>:
+	name : 'signup'
+	FloatLayout:
+		canvas:
+			Color:
+				rgba: rgba("#e5a222cc")
+			Triangle:
+				points: (0, self.size[1] - (0.4*self.size[1]), 0, self.size[1], self.size[0], self.size[1])
+			Color:
+				rgba: rgba("#d48d08cc")
+			Triangle:
+				points: (self.size[0], self.size[1] - (0.4*self.size[1]), self.size[0]//2, self.size[1] - (0.2*self.size[1]), self.size[0], self.size[1])
+		MDIconButton:
+			icon : 'keyboard-backspace'
+			pos_hint: {'center_x': 0.1, 'center_y' : 0.94}
+			theme_text_color : 'Custom'
+			text_color : (1, 1, 1, 1)
+			on_press:
+				root.manager.current="login"
+		MDLabel:
+			text : 'SIGNUP'
+			pos_hint : {'x' : 0.415, 'center_y' : 0.85}
+			theme_text_color : 'Custom'
+			text_color : (1, 1, 1, 1)
+			text_size: (0.3, 0.2)
+		MDIcon:
+			pos_hint: {'center_x': 0.5, 'center_y' : 0.6}
+			size_hint: (None, None)
+			icon : 'AVATAR/icons8-user-100.png'
+		MDTextField:
+			id : email_signup
+			hint_text : 'Email'
+			size_hint: (0.8, None)
+			pos_hint : {'center_x' : 0.5, 'center_y' : 0.45}
+		MDTextField:
+			id : password_signup
+			hint_text : 'Password'
+			password : True
+			size_hint: (0.8, None)
+			pos_hint : {'center_x' : 0.5, 'center_y' : 0.34}
+		MDFillRoundFlatButton:
+			text : 'signup'
+			md_bg_color : rgba('#87CEEB')
+			text_color : 1, 1, 1, 1
+			size_hint: (0.4, None)
+			pos_hint : {'center_x' : 0.5, 'center_y' : 0.17}
+			on_press:
+				app.signup()
+				
+<Content>:
+	ScrollView:
+		MDList:
+			OneLineListItem:
+				left_action_items:[["home",lambda x:x]]
+				text:"Home "
+				color:rgba('#ffffff')
+				on_release:
+					root.nav_drawer.set_state("close")
+					root.manager.current="screen1"
+			OneLineListItem:
+				text:"Languages"
+				color:rgba('#ffffff')
+				on_release:
+					root.nav_drawer.set_state("close")
+					root.manager.current="screen2"
+			OneLineListItem:
+				text:"Actuality"
+				color:rgba('#ffffff')
+				on_release:
+					root.nav_drawer.set_state("close")
+					root.manager.current="screen3"
+			OneLineListItem:
+				text:"Regions"
+				color:rgba('#ffffff')
+				on_release:
+					root.nav_drawer.set_state("close")
+					root.manager.current="screen4"
+										
+<DashboardScreen>:
+	name:"dashboard"
+	md_bg_color:56/255,40/255,81/255,1
+	MDTopAppBar:
+		md_bg_color:rgba('#87CEEB')
+		pos_hint:{"top":1}
+		height:"50px"
+		title:"SpeakEasy"
+		elevation:8
+		left_action_items:[["menu",lambda x:nav_drawer.set_state('open')]]
+		
+	MDNavigationLayout:
+		ScreenManager:
+			id:screen_manager
+			Screen:
+				name:"screen1"
+				MDBoxLayout:
+					margin_left:"10px"
+					padding:"50px"
+					Image:
+						source:"img/Drapeau.png"
+						pos_hint : {'center_x' : 0.75, 'center_y' : 0.7}
+						size_hint: (0.9, 0.5)
+					MDLabel:
+						text:"welcome to speakeasy app, we present to you the various cultures that our beautiful and wonderful country offers us"
+						pos_hint : {'center_x' : 0.4, 'center_y' : 0.3}
+						halign:"center"
+
+			Screen:
+				name:"screen2"
+				MDBoxLayout:
+					MDList:
+						pos_hint:{"top":0.9}
+						md_bg_color : rgba('#ffffff')
+						padding: "12dp"
+            			spacing: "12dp"
+						OneLineListItem:	
+							MDFillRoundFlatButton:
+								text:"Ewondo"
+								md_bg_color : rgba('#ffffff')
+								text_color : "#000000"
+								font_style:"Button"
+								size_hint: (0.6, None)
+								pos_hint : {'center_x' : 0.5, 'center_y' : 0.5}
+								on_press:
+									root.manager.current="ewondo"
+							Image:
+								source:"img/ewondo.jpg"
+								pos_hint : {'center_x' : 0.15, 'center_y' : 0.5}
+						OneLineListItem:
+							MDFillRoundFlatButton:
+								text:"Douala"
+								md_bg_color : rgba('#ffffff')
+								text_color : "#000000"
+								font_style:"Button"
+								size_hint: (0.6, None)
+								pos_hint : {'center_x' : 0.5, 'center_y' : 0.5}
+							Image:
+								source:"img/douala.jpg"
+								pos_hint : {'center_x' : 0.15, 'center_y' : 0.5}
+						OneLineListItem:
+							MDFillRoundFlatButton:
+								text:"Bayangi"
+								md_bg_color : rgba('#ffffff')
+								text_color : "#000000"
+								font_style:"Button"
+								size_hint: (0.6, None)
+								pos_hint : {'center_x' : 0.5, 'center_y' : 0.5}
+							Image:
+								source:"img/bayangi.jpg"
+								pos_hint : {'center_x' : 0.15, 'center_y' : 0.5}
+						OneLineListItem:
+							MDFillRoundFlatButton:
+								text:"Bamoun"
+								md_bg_color : rgba('#ffffff')
+								text_color : "#000000"
+								font_style:"Button"
+								size_hint: (0.6, None)
+								pos_hint : {'center_x' : 0.5, 'center_y' : 0.5}
+							Image:
+								source:"img/bamoun.jpg"
+								pos_hint : {'center_x' : 0.15, 'center_y' : 0.5}
+						OneLineListItem:	
+							MDFillRoundFlatButton:
+								text:"Beti"
+								md_bg_color : rgba('#ffffff')
+								text_color : "#000000"
+								font_style:"Button"
+								size_hint: (0.6, None)
+								pos_hint : {'center_x' : 0.5, 'center_y' : 0.5}
+							Image:
+								source:"img/beti.jpg"
+								pos_hint : {'center_x' : 0.15, 'center_y' : 0.5}
+							
+						OneLineListItem:
+							MDFillRoundFlatButton:
+								text : "Medumba"
+								md_bg_color : rgba('#ffffff')
+								text_color : "#000000"
+								font_style:"Button"
+								size_hint: (0.6, None)
+								pos_hint : {'center_x' : 0.5, 'center_y' : 0.5}
+								on_press:
+									root.manager.current="medumba"
+							Image:
+								source:"img/bamelike.jpg"
+								pos_hint : {'center_x' : 0.15, 'center_y' : 0.5}
+							
+							
+			Screen:
+				name:"screen3"
+				MDLabel:
+					text:"This is screen 3"
+					halign:"center"
+			Screen:
+				name:"screen4"
+				MDLabel:
+					text:"This is screen 4"
+					halign:"center"
+
+	MDNavigationDrawer:
+		id:nav_drawer
+		md_bg_color:rgba('#87CEEB')
+		Content:
+			manager:screen_manager
+			nav_drawer:nav_drawer
+
+<DataScreen>:
+	name:"medumba"
+	MDBoxLayout:
+		orientation:"vertical"
+		md_bg_color:rgba('#ffffff')
+		MDTopAppBar:
+			md_bg_color:rgba('#87CEEB')
+			pos_hint:{"top":0.5}
+			height:"50px"
+			title:"SpeakEasy"
+			elevation:8
+			MDIconButton:
+				icon : 'keyboard-backspace'
+				pos_hint: {'center_x': 0.1, 'center_y' : 0.94}
+				theme_text_color : 'Custom'
+				text_color : (1, 1, 1, 1)
+				on_press:
+					root.manager.current="dashboard"
+		ScrollView:
+            do_scroll_x: False
+            do_scroll_y: True
+            GridLayout:
+                id: grid
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+
+<DatasetScreen>:
+	name:"ewondo"
+	MDBoxLayout:
+		orientation:"vertical"
+		md_bg_color:rgba('#ffffff')
+		MDTopAppBar:
+			md_bg_color:rgba('#87CEEB')
+			pos_hint:{"top":0.5}
+			height:"50px"
+			title:"SpeakEasy"
+			elevation:8
+			MDIconButton:
+				icon : 'keyboard-backspace'
+				pos_hint: {'center_x': 0.1, 'center_y' : 0.94}
+				theme_text_color : 'Custom'
+				text_color : (1, 1, 1, 1)
+				on_press:
+					root.manager.current="dashboard"
+		ScrollView:
+            do_scroll_x: False
+            do_scroll_y: True
+            GridLayout:
+                id: grid
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+
+
+<DetailScreen>:
+    name: 'detail_screen_{}'
+    BoxLayout:
+        orientation: 'vertical'
+		MDTopAppBar:
+			md_bg_color:rgba('#87CEEB')
+			pos_hint:{"top":0.5}
+			height:"50px"
+			title:"SpeakEasy"
+			elevation:8
+			MDIconButton:
+				icon : 'keyboard-backspace'
+				pos_hint: {'center_x': 0.1, 'center_y' : 0.94}
+				theme_text_color : 'Custom'
+				text_color : (1, 1, 1, 1)
+				on_press:
+					root.manager.current="ewondo"
+        MDLabel:
+            id: detail_label
+            text: ""
+            font_size: 20
+        MDLabel:
+            id: secondary_label
+            text: ""
+            font_size: 16
+        MDLabel:
+            id: tertiary_label
+            text: ""
+            font_size: 16
+		Button:
+            id: audio_list
+            text: "Play Audio"
+            size_hint_y: 0.2
+			
+		
+	 		
+
+	
